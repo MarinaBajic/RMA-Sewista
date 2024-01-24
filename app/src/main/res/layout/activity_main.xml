@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="90dp"
-        android:text="@string/homePageHeading"
+        android:text="@string/home_page_heading"
         android:textColor="@color/light"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:paddingVertical="6dp"
-        android:text="@string/homePageSubheading"
+        android:text="@string/home_page_subheading"
         android:textColor="@color/light"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,10 +37,13 @@
         android:id="@+id/all_patterns"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginVertical="26dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="94dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homePageSubheading" />
+        app:layout_constraintTop_toBottomOf="@+id/homePageSubheading"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include layout="@layout/navbar_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

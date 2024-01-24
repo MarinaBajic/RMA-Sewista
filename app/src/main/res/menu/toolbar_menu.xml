@@ -5,10 +5,10 @@
         android:id="@+id/action_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/toolbarMenuSettings" />
+        android:title="@string/action_settings" />
     <item
         android:id="@+id/action_app_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/toolbarMenuAppInfo" />
+        android:title="@string/action_app_info" />
 </menu>

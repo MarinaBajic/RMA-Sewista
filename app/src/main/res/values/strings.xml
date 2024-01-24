@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Sewista</string>
-    <string name="patternImageDesc">Pattern image</string>
-    <string name="patternTitleText">Pattern title</string>
-    <string name="patternDesc">Lorem ipsum dolor sit amet.</string>
-    <string name="homePageHeading">Sewing patterns</string>
-    <string name="logoDesc">Sewista logo</string>
-    <string name="homePageSubheading">Sew Stylish: Unleash Your Creativity with Unique Patterns!</string>
-    <string name="toolbarMenuSettings">Settings</string>
-    <string name="toolbarMenuAppInfo">App Info</string>
+    <string name="pattern_image_desc">Pattern image</string>
+    <string name="pattern_title">Pattern title</string>
+    <string name="pattern_desc">Lorem ipsum dolor sit amet.</string>
+    <string name="home_page_heading">Sewing patterns</string>
+    <string name="home_page_subheading">Sew Stylish: Unleash Your Creativity with Unique Patterns!</string>
+    <string name="logo">Sewista logo</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_app_info">App Info</string>
+    <string name="action_home">Home</string>
+    <string name="action_gallery">Patterns</string>
+    <string name="action_location">Find us</string>
 </resources>

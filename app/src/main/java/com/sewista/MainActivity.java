@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         setToolbar(findViewById(R.id.toolbar));
         setListOfPatterns(findViewById(R.id.all_patterns));
+        setNavbar(findViewById(R.id.navbar));
     }
 
     @Override
@@ -35,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // TODO
             Toast.makeText(this, "You clicked settings", Toast.LENGTH_SHORT).show();
         }
         if (id == R.id.action_app_info) {
+            // TODO
             Toast.makeText(this, "You clicked app info", Toast.LENGTH_SHORT).show();
         }
         return true;
@@ -61,5 +66,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void setToolbar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
+    }
+
+    private void setNavbar(BottomNavigationView navbar) {
+        navbar.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.action_home) {
+               // TODO
+            }
+            if (id == R.id.action_gallery) {
+                // TODO
+            }
+            if (id == R.id.action_location) {
+                // TODO
+            }
+            return true;
+        });
     }
 }

@@ -31,7 +31,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/patternImageDesc"/>
+                android:contentDescription="@string/pattern_image_desc"/>
 
             <TextView
                 android:id="@+id/patternTitle"
@@ -41,7 +41,7 @@
                 android:layout_marginTop="12dp"
                 android:padding="5dp"
                 android:gravity="center"
-                android:text="@string/patternTitleText"
+                android:text="@string/pattern_title"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/patternDesc"
@@ -57,7 +57,7 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="@string/patternDesc"
+                android:text="@string/pattern_desc"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
