@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#333</color>
-    <color name="teal">#004d4d</color>
-    <color name="white">#F9F5E1</color>
+    <color name="black">#111</color>
+    <color name="darker">#002828</color>
+    <color name="dark">#003c3c</color>
+    <color name="gray">#c3c3c3</color>
+    <color name="light">#f6f6f6</color>
+    <color name="accent">#9B9BCF</color>
 </resources>

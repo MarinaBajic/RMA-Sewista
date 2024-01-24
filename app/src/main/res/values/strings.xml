@@ -3,4 +3,9 @@
     <string name="patternImageDesc">Pattern image</string>
     <string name="patternTitleText">Pattern title</string>
     <string name="patternDesc">Lorem ipsum dolor sit amet.</string>
+    <string name="homePageHeading">Sewing patterns</string>
+    <string name="logoDesc">Sewista logo</string>
+    <string name="homePageSubheading">Sew Stylish: Unleash Your Creativity with Unique Patterns!</string>
+    <string name="toolbarMenuSettings">Settings</string>
+    <string name="toolbarMenuAppInfo">App Info</string>
 </resources>
