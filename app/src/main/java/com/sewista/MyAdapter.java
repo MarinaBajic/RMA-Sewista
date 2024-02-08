@@ -18,27 +18,39 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         ImageView patternImage;
         TextView patternTitle, patternDesc;
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             patternImage = itemView.findViewById(R.id.patternImage);
             patternTitle = itemView.findViewById(R.id.patternTitle);
             patternDesc = itemView.findViewById(R.id.patternDesc);
+
+            itemView.setOnClickListener(view -> {
+                if (recyclerViewInterface != null) {
+                    int pos = getAdapterPosition();
+
+                    if (pos != RecyclerView.NO_POSITION)
+                        recyclerViewInterface.onItemClick(pos);
+                }
+            });
         }
     }
 
     private Context context;
     private List<Pattern> patterns;
 
-    public MyAdapter(Context context, List<Pattern> patterns) {
+    private final RecyclerViewInterface recyclerViewInterface;
+
+    public MyAdapter(Context context, List<Pattern> patterns, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.patterns = patterns;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.pattern_card, parent, false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(v, recyclerViewInterface);
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/dark" >
+    android:background="@color/lighter" >
 
     <include layout="@layout/toolbar_layout" />
 
@@ -15,9 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif-light"
         android:text="@string/home_page_heading"
-        android:textColor="@color/light"
+        android:textColor="@color/darker"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +30,8 @@
         android:layout_marginStart="32dp"
         android:paddingVertical="6dp"
         android:text="@string/home_page_subheading"
-        android:textColor="@color/light"
-        android:textSize="12sp"
+        android:textColor="@color/darker"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homePageHeading" />
 

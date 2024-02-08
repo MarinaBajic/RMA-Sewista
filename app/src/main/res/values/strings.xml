@@ -11,4 +11,9 @@
     <string name="action_home">Home</string>
     <string name="action_gallery">Patterns</string>
     <string name="action_location">Find us</string>
+    <string name="pattern_details_title">Pattern Details Title</string>
+    <string name="pattern_details">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="pattern_details_img_desc">Pattern Details</string>
+    <string name="pattern_instructions">Instructions:</string>
+    <string name="pattern_materials">Materials:</string>
 </resources>
