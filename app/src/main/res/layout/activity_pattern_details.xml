@@ -31,13 +31,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="32dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="sans-serif"
                 android:lineSpacingExtra="8sp"
                 android:text="@string/pattern_details_title"
                 android:textColor="@color/darker"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/pattern_details_desc"
@@ -58,7 +59,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:text="@string/pattern_materials"
-                android:textColor="@color/black"
+                android:textColor="@color/darker"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -81,7 +82,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:text="@string/pattern_instructions"
-                android:textColor="@color/black"
+                android:textColor="@color/darker"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

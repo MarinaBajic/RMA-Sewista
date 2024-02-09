@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new PatternsFragment());
             }
             if (id == R.id.action_location) {
-                // TODO
+                replaceFragment(new MapsFragment());
             }
             return true;
         });
