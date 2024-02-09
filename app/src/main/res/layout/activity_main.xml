@@ -9,42 +9,18 @@
 
     <include layout="@layout/toolbar_layout" />
 
-    <TextView
-        android:id="@+id/homePageHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="90dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/home_page_heading"
-        android:textColor="@color/darker"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/homePageSubheading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:paddingVertical="6dp"
-        android:text="@string/home_page_subheading"
-        android:textColor="@color/darker"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homePageHeading" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/all_patterns"
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homePageSubheading"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <include layout="@layout/navbar_layout" />
 

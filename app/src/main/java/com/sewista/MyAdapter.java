@@ -1,6 +1,5 @@
 package com.sewista;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,13 +34,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
-    private Context context;
     private List<Pattern> patterns;
 
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public MyAdapter(Context context, List<Pattern> patterns, RecyclerViewInterface recyclerViewInterface) {
-        this.context = context;
+    public MyAdapter(List<Pattern> patterns, RecyclerViewInterface recyclerViewInterface) {
         this.patterns = patterns;
         this.recyclerViewInterface = recyclerViewInterface;
     }
@@ -49,7 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.pattern_card, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.pattern_card, parent, false);
         return new MyViewHolder(v, recyclerViewInterface);
     }
 
