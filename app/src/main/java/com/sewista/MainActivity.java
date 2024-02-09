@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         setToolbar(findViewById(R.id.toolbar));
         setNavbar(findViewById(R.id.navbar));
-
         replaceFragment(new HomeFragment());
     }
 
