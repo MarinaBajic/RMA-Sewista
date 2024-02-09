@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Sewista" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Sewista" parent="Theme.MaterialComponents">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Sewista" parent="Base.Theme.Sewista" />
+    <style name="Theme.Sewista" parent="Base.Theme.Sewista" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
