@@ -1,19 +1,45 @@
 package com.sewista;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Pattern")
 public class Pattern {
 
+    @ColumnInfo(name = "pattern_id")
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "desc")
     private String desc;
+
+    @ColumnInfo(name = "materials")
     private String materials;
+
+    @ColumnInfo(name = "instructions")
     private String instructions;
+
+    @ColumnInfo(name = "image_id")
     private int image;
 
     public Pattern(String title, String desc, String materials, String instructions, int image) {
+        this.id = 0;
         this.title = title;
         this.desc = desc;
         this.materials = materials;
         this.instructions = instructions;
         this.image = image;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
