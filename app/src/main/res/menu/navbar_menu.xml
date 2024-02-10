@@ -11,7 +11,7 @@
         android:id="@+id/action_gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/action_gallery"
+        android:title="@string/action_patterns"
         android:icon="@drawable/ic_gallery" />
     <item
         android:title=""
@@ -26,7 +26,7 @@
         android:id="@+id/action_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/navbar_admin"
+        android:title="@string/action_admin"
         android:icon="@drawable/ic_admin"/>
 
 </menu>
