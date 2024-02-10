@@ -1,10 +1,12 @@
-package com.sewista;
+package com.sewista.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sewista.R;
 
 public class PatternDetailsActivity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class PatternDetailsActivity extends AppCompatActivity {
     }
 
     private void setUpDetails() {
-        int patternId = getIntent().getIntExtra("PatternId", 1);
+        int patternPosition = getIntent().getIntExtra("PatternPosition", 1);
         String patternDetailsTitle = getIntent().getStringExtra("PatternDetailsTitle");
         String patternDetailsDesc = getIntent().getStringExtra("PatternDetailsDesc");
         String patternDetailsMaterials = getIntent().getStringExtra("PatternDetailsMaterials");
@@ -34,7 +36,7 @@ public class PatternDetailsActivity extends AppCompatActivity {
         patternDetailsMaterialsView.setText(patternDetailsMaterials);
         patternDetailsInstructionsView.setText(patternDetailsInstructions);
 
-        int imageResource = R.drawable.image1 + patternId - 1;
+        int imageResource = R.drawable.image1 + patternPosition;
         patternDetailsImageView.setImageResource(imageResource);
     }
 }

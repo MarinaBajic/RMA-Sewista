@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.recycler;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.sewista.model.Pattern;
+import com.sewista.R;
 
 import java.util.List;
 
@@ -38,7 +41,7 @@ public class MyAdminAdapter extends RecyclerView.Adapter<MyAdminAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.pattern_card_admin, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_pattern_admin, parent, false);
         return new MyViewHolder(v);
     }
 

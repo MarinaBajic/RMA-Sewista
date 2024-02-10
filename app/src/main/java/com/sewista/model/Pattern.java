@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -22,16 +22,12 @@ public class Pattern {
     @ColumnInfo(name = "instructions")
     private String instructions;
 
-    @ColumnInfo(name = "image_id")
-    private int image;
-
-    public Pattern(String title, String desc, String materials, String instructions, int image) {
+    public Pattern(String title, String desc, String materials, String instructions) {
         this.id = 0;
         this.title = title;
         this.desc = desc;
         this.materials = materials;
         this.instructions = instructions;
-        this.image = image;
     }
 
     public int getId() {
@@ -56,14 +52,6 @@ public class Pattern {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
     }
 
     public String getInstructions() {

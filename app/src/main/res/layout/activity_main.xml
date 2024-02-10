@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:background="@color/lighter" >
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/layout_toolbar" />
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -22,6 +22,6 @@
 
     </FrameLayout>
 
-    <include layout="@layout/navbar_layout" />
+    <include layout="@layout/layout_navbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

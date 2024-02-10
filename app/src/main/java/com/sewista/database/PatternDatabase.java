@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.database;
 
 import android.content.Context;
 
@@ -8,7 +8,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Pattern.class}, version = 1)
+import com.sewista.model.Pattern;
+
+@Database(
+        entities = {Pattern.class},
+        version = 1)
 public abstract class PatternDatabase extends RoomDatabase {
 
     public abstract PatternDAO getPatternDAO();

@@ -13,6 +13,12 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.sewista.fragment.AddPatternFragment;
+import com.sewista.fragment.AdminFragment;
+import com.sewista.fragment.AppInfoFragment;
+import com.sewista.fragment.HomeFragment;
+import com.sewista.fragment.MapsFragment;
+import com.sewista.fragment.PatternsFragment;
 
 public class MainActivity extends AppCompatActivity {
 

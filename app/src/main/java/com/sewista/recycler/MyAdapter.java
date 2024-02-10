@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.sewista.model.Pattern;
+import com.sewista.R;
 
 import java.util.List;
 
@@ -46,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.pattern_card, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_pattern, parent, false);
         return new MyViewHolder(v, recyclerViewInterface);
     }
 
@@ -54,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.patternTitle.setText(patternList.get(position).getTitle());
         holder.patternDesc.setText(patternList.get(position).getDesc());
-        holder.patternImage.setImageResource(R.drawable.image1 + patternList.get(position).getId() - 1);
+        holder.patternImage.setImageResource(R.drawable.image1 + position);
     }
 
     @Override

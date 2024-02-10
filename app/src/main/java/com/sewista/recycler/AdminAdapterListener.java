@@ -1,4 +1,6 @@
-package com.sewista;
+package com.sewista.recycler;
+
+import com.sewista.model.Pattern;
 
 public interface AdminAdapterListener {
 

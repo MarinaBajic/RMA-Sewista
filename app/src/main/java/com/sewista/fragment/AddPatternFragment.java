@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.fragment;
 
 import android.os.Bundle;
 
@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.sewista.model.Pattern;
+import com.sewista.database.PatternDAO;
+import com.sewista.database.PatternDatabase;
+import com.sewista.R;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -56,7 +61,7 @@ public class AddPatternFragment extends Fragment {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
             }
             else {
-                Pattern pattern = new Pattern(title, desc, materials, instructions, 0);
+                Pattern pattern = new Pattern(title, desc, materials, instructions);
                 savePatternInBackground(pattern);
             }
         });

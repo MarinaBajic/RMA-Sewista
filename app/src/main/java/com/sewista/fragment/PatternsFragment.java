@@ -1,4 +1,4 @@
-package com.sewista;
+package com.sewista.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,15 +7,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.sewista.database.PatternDAO;
+import com.sewista.recycler.MyAdapter;
+import com.sewista.model.Pattern;
+import com.sewista.database.PatternDatabase;
+import com.sewista.activity.PatternDetailsActivity;
+import com.sewista.R;
+import com.sewista.recycler.RecyclerViewInterface;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -25,7 +30,7 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
 
     private List<Pattern> patternList;
 
-    private PatternDatabase patternDatabase;
+    private PatternDAO patternDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,19 +42,8 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
-            @Override
-            public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                super.onCreate(db);
-            }
-
-            @Override
-            public void onOpen(@NonNull SupportSQLiteDatabase db) {
-                super.onOpen(db);
-            }
-        };
-
-        patternDatabase = Room.databaseBuilder(getContext().getApplicationContext(), PatternDatabase.class, "Pattern Database").addCallback(roomCallback).build();
+        PatternDatabase patternDatabase = PatternDatabase.getInstance(requireContext());
+        patternDAO = patternDatabase.getPatternDAO();
 
         setListOfPatterns(view.findViewById(R.id.all_patterns));
     }
@@ -62,7 +56,7 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
         executorService.execute(() -> {
-            patternList = patternDatabase.getPatternDAO().getAllPatterns();
+            patternList = patternDAO.getAllPatterns();
 
             handler.post(() -> {
                 MyAdapter myAdapter = new MyAdapter(patternList, this);
@@ -77,7 +71,7 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
     public void onItemClick(int position) {
         Intent intent = new Intent(getContext(), PatternDetailsActivity.class);
 
-        intent.putExtra("PatternId", patternList.get(position).getId());
+        intent.putExtra("PatternPosition", position);
         intent.putExtra("PatternDetailsTitle", patternList.get(position).getTitle());
         intent.putExtra("PatternDetailsDesc", patternList.get(position).getDesc());
         intent.putExtra("PatternDetailsMaterials", patternList.get(position).getMaterials());
