@@ -5,9 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -23,7 +20,7 @@ import java.util.concurrent.Executors;
 
 public class AddPatternFragment extends Fragment {
 
-    private PatternDatabase patternDatabase;
+    private PatternDAO patternDAO;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,33 +32,25 @@ public class AddPatternFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
-            @Override
-            public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                super.onCreate(db);
-            }
+        PatternDatabase patternDatabase = PatternDatabase.getInstance(requireContext());
+        patternDAO = patternDatabase.getPatternDAO();
 
-            @Override
-            public void onOpen(@NonNull SupportSQLiteDatabase db) {
-                super.onOpen(db);
-            }
-        };
-
-        patternDatabase = Room.databaseBuilder(getContext().getApplicationContext(), PatternDatabase.class, "Pattern Database").addCallback(roomCallback).build();
-
-        savePattern(view.findViewById(R.id.add_pattern_title),
-                    view.findViewById(R.id.add_pattern_desc),
-                    view.findViewById(R.id.add_pattern_materials),
-                    view.findViewById(R.id.add_pattern_instructions),
-                    view.findViewById(R.id.add_pattern_btn));
+        savePattern(view, view.findViewById(R.id.add_pattern_btn));
     }
 
-    private void savePattern(EditText titleEdit, EditText descEdit, EditText materialsEdit, EditText instructionsEdit, Button saveBtn) {
-        saveBtn.setOnClickListener(view -> {
-            String title = titleEdit.getText().toString();
-            String desc = descEdit.getText().toString();
-            String materials = materialsEdit.getText().toString();
-            String instructions = instructionsEdit.getText().toString();
+    private void savePattern(View view, Button saveBtn) {
+        saveBtn.setOnClickListener(v -> {
+            EditText titleView = view.findViewById(R.id.add_pattern_title);
+            String title = titleView.getText().toString();
+
+            EditText descView = view.findViewById(R.id.add_pattern_desc);
+            String desc = descView.getText().toString();
+
+            EditText materialsView = view.findViewById(R.id.add_pattern_materials);
+            String materials = materialsView.getText().toString();
+
+            EditText instructionsView = view.findViewById(R.id.add_pattern_instructions);
+            String instructions = instructionsView.getText().toString();
 
             if (title.isEmpty() || desc.isEmpty() || materials.isEmpty() || instructions.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -77,8 +66,7 @@ public class AddPatternFragment extends Fragment {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
         executorService.execute(() -> {
-            patternDatabase.getPatternDAO().addPattern(pattern);
-
+            patternDAO.addPattern(pattern);
             handler.post(() -> Toast.makeText(requireContext(), "Added to Database", Toast.LENGTH_SHORT).show());
         });
     }

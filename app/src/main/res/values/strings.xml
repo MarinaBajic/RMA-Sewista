@@ -50,4 +50,8 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="icon_delete">Delete icon</string>
+    <string name="icon_edit">Edit icon</string>
+    <string name="admin_panel">Admin panel</string>
 </resources>

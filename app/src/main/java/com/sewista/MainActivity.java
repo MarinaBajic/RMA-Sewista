@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new MapsFragment());
             }
             if (id == R.id.action_admin) {
-                // TODO
+                replaceFragment(new AdminFragment());
             }
             return true;
         });

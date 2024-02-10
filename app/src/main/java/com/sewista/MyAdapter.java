@@ -19,13 +19,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView patternTitle, patternDesc;
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
-            patternImage = itemView.findViewById(R.id.patternImage);
-            patternTitle = itemView.findViewById(R.id.patternTitle);
-            patternDesc = itemView.findViewById(R.id.patternDesc);
+            patternImage = itemView.findViewById(R.id.pattern_image);
+            patternTitle = itemView.findViewById(R.id.pattern_title);
+            patternDesc = itemView.findViewById(R.id.pattern_desc);
 
             itemView.setOnClickListener(view -> {
                 if (recyclerViewInterface != null) {
-                    int pos = getAdapterPosition();
+                    int pos = getAbsoluteAdapterPosition();
 
                     if (pos != RecyclerView.NO_POSITION)
                         recyclerViewInterface.onItemClick(pos);
@@ -34,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
-    private List<Pattern> patternList;
+    private final List<Pattern> patternList;
 
     private final RecyclerViewInterface recyclerViewInterface;
 
