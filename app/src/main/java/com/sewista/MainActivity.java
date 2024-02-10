@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            replaceFragment(new SettingsFragment());
-        }
         if (id == R.id.action_app_info) {
             replaceFragment(new AppInfoFragment());
         }

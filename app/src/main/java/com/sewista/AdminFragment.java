@@ -62,7 +62,7 @@ public class AdminFragment extends Fragment implements AdminAdapterListener {
 
     @Override
     public void onUpdate(Pattern pattern, int position) {
-
+        // TODO
     }
 
     @Override
