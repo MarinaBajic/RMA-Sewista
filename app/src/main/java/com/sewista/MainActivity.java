@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -37,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            // TODO
-            Toast.makeText(this, "You clicked settings", Toast.LENGTH_SHORT).show();
+            replaceFragment(new SettingsFragment());
         }
         if (id == R.id.action_app_info) {
             replaceFragment(new AppInfoFragment());
@@ -62,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.action_location) {
                 replaceFragment(new MapsFragment());
             }
-            if (id == R.id.action_settings) {
-                replaceFragment(new SettingsFragment());
+            if (id == R.id.action_admin) {
+                // TODO
             }
             return true;
         });

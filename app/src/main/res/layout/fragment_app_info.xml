@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".AppInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +18,7 @@
             android:layout_marginTop="100dp"
             android:layout_marginEnd="32dp"
             android:text="@string/app_info_heading"
-            android:textColor="@color/lightest"
+            android:textColor="@color/darker"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +34,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/app_info_desc"
             android:textAlignment="center"
-            android:textColor="@color/lightest"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +49,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/app_info_by"
             android:textAlignment="center"
-            android:textColor="@color/lightest"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />

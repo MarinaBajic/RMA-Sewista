@@ -23,10 +23,10 @@
         android:title="@string/action_location"
         android:icon="@drawable/ic_location"/>
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/settings"
-        android:icon="@drawable/ic_settings"/>
+        android:title="@string/navbar_admin"
+        android:icon="@drawable/ic_admin"/>
 
 </menu>
