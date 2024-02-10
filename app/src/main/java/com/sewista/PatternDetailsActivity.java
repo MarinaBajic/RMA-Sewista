@@ -13,6 +13,10 @@ public class PatternDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pattern_details);
 
+        setUpDetails();
+    }
+
+    private void setUpDetails() {
         String patternDetailsTitle = getIntent().getStringExtra("PatternDetailsTitle");
         String patternDetailsDesc = getIntent().getStringExtra("PatternDetailsDesc");
         String patternDetailsMaterials = getIntent().getStringExtra("PatternDetailsMaterials");
