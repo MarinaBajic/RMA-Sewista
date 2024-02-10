@@ -25,4 +25,5 @@
     <string name="add_pattern_description">Pattern Description</string>
     <string name="add_pattern_materials">Materials</string>
     <string name="add_pattern_instructions">Instructions</string>
+    <string name="save_pattern">Save pattern</string>
 </resources>
