@@ -34,12 +34,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
-    private List<Pattern> patterns;
+    private List<Pattern> patternList;
 
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public MyAdapter(List<Pattern> patterns, RecyclerViewInterface recyclerViewInterface) {
-        this.patterns = patterns;
+    public MyAdapter(List<Pattern> patternList, RecyclerViewInterface recyclerViewInterface) {
+        this.patternList = patternList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
@@ -52,13 +52,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.patternTitle.setText(patterns.get(position).getTitle());
-        holder.patternDesc.setText(patterns.get(position).getDesc());
-        holder.patternImage.setImageResource(patterns.get(position).getImage());
+        holder.patternTitle.setText(patternList.get(position).getTitle());
+        holder.patternDesc.setText(patternList.get(position).getDesc());
+        holder.patternImage.setImageResource(patternList.get(position).getImage());
     }
 
     @Override
     public int getItemCount() {
-        return patterns.size();
+        return patternList.size();
     }
 }

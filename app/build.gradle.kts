@@ -30,6 +30,8 @@ android {
 }
 
 dependencies {
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    implementation("androidx.activity:activity:1.8.2")
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

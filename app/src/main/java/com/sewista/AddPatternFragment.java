@@ -18,14 +18,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class AddPatternFragment extends Fragment {
 
     private PatternDatabase patternDatabase;
-    List<Pattern> patternList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,12 +54,6 @@ public class AddPatternFragment extends Fragment {
                     view.findViewById(R.id.add_pattern_materials),
                     view.findViewById(R.id.add_pattern_instructions),
                     view.findViewById(R.id.add_pattern_btn));
-
-        getPatterns(view.findViewById(R.id.get_patterns_btn));
-    }
-
-    private void getPatterns(Button getBtn) {
-        getBtn.setOnClickListener(view -> getPatternListInBackground());
     }
 
     private void savePattern(EditText titleEdit, EditText descEdit, EditText materialsEdit, EditText instructionsEdit, Button saveBtn) {
@@ -71,8 +63,13 @@ public class AddPatternFragment extends Fragment {
             String materials = materialsEdit.getText().toString();
             String instructions = instructionsEdit.getText().toString();
 
-            Pattern pattern = new Pattern(title, desc, materials, instructions, 1);
-            savePatternInBackground(pattern);
+            if (title.isEmpty() || desc.isEmpty() || materials.isEmpty() || instructions.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Pattern pattern = new Pattern(title, desc, materials, instructions, R.drawable.image3);
+                savePatternInBackground(pattern);
+            }
         });
     }
 
@@ -83,24 +80,6 @@ public class AddPatternFragment extends Fragment {
             patternDatabase.getPatternDAO().addPattern(pattern);
 
             handler.post(() -> Toast.makeText(requireContext(), "Added to Database", Toast.LENGTH_SHORT).show());
-        });
-    }
-
-    public void getPatternListInBackground() {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Handler handler = new Handler(Looper.getMainLooper());
-        executorService.execute(() -> {
-            patternList = patternDatabase.getPatternDAO().getAllPatterns();
-
-            handler.post(() -> {
-                StringBuilder sb = new StringBuilder();
-                for (Pattern pattern: patternList) {
-                    sb.append(pattern.getTitle());
-                    sb.append("\n");
-                }
-                String finalData = sb.toString();
-                Toast.makeText(requireContext(), finalData, Toast.LENGTH_SHORT).show();
-            });
         });
     }
 }
