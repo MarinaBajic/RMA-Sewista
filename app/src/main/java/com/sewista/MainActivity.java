@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "You clicked settings", Toast.LENGTH_SHORT).show();
         }
         if (id == R.id.action_app_info) {
-            // TODO
-            Toast.makeText(this, "You clicked app info", Toast.LENGTH_SHORT).show();
+            replaceFragment(new AppInfoFragment());
         }
         return true;
     }
@@ -62,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
             }
             if (id == R.id.action_location) {
                 replaceFragment(new MapsFragment());
+            }
+            if (id == R.id.action_settings) {
+                replaceFragment(new SettingsFragment());
             }
             return true;
         });

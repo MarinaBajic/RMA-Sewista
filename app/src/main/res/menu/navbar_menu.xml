@@ -17,15 +17,16 @@
         android:title=""
         android:enabled="false"/>
     <item
-        android:id="@+id/action_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Placeholder"
-        android:icon="@drawable/ic_location"/>
-    <item
         android:id="@+id/action_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="@string/action_location"
         android:icon="@drawable/ic_location"/>
+    <item
+        android:id="@+id/action_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"/>
+
 </menu>

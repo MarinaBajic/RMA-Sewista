@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.patternTitle.setText(patternList.get(position).getTitle());
         holder.patternDesc.setText(patternList.get(position).getDesc());
-        holder.patternImage.setImageResource(patternList.get(position).getImage());
+        holder.patternImage.setImageResource(R.drawable.image1 + patternList.get(position).getId() - 1);
     }
 
     @Override

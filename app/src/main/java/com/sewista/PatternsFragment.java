@@ -77,11 +77,11 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
     public void onItemClick(int position) {
         Intent intent = new Intent(getContext(), PatternDetailsActivity.class);
 
+        intent.putExtra("PatternId", patternList.get(position).getId());
         intent.putExtra("PatternDetailsTitle", patternList.get(position).getTitle());
         intent.putExtra("PatternDetailsDesc", patternList.get(position).getDesc());
         intent.putExtra("PatternDetailsMaterials", patternList.get(position).getMaterials());
         intent.putExtra("PatternDetailsInstructions", patternList.get(position).getInstructions());
-        intent.putExtra("PatternDetailsImage", patternList.get(position).getImage());
 
         startActivity(intent);
     }

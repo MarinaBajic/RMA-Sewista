@@ -17,11 +17,11 @@ public class PatternDetailsActivity extends AppCompatActivity {
     }
 
     private void setUpDetails() {
+        int patternId = getIntent().getIntExtra("PatternId", 1);
         String patternDetailsTitle = getIntent().getStringExtra("PatternDetailsTitle");
         String patternDetailsDesc = getIntent().getStringExtra("PatternDetailsDesc");
         String patternDetailsMaterials = getIntent().getStringExtra("PatternDetailsMaterials");
         String patternDetailsInstructions = getIntent().getStringExtra("PatternDetailsInstructions");
-        int patternDetailsImage = getIntent().getIntExtra("PatternDetailsImage", 1);
 
         TextView patternDetailsTitleView = findViewById(R.id.pattern_details_title);
         TextView patternDetailsDescView = findViewById(R.id.pattern_details_desc);
@@ -33,6 +33,8 @@ public class PatternDetailsActivity extends AppCompatActivity {
         patternDetailsDescView.setText(patternDetailsDesc);
         patternDetailsMaterialsView.setText(patternDetailsMaterials);
         patternDetailsInstructionsView.setText(patternDetailsInstructions);
-        patternDetailsImageView.setImageResource(patternDetailsImage);
+
+        int imageResource = R.drawable.image1 + patternId - 1;
+        patternDetailsImageView.setImageResource(imageResource);
     }
 }

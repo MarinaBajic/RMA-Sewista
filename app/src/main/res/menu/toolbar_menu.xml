@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/action_settings" />
+        android:title="@string/action_admin" />
     <item
         android:id="@+id/action_app_info"
         android:layout_width="wrap_content"

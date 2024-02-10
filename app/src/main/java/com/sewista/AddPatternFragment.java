@@ -67,7 +67,7 @@ public class AddPatternFragment extends Fragment {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
             }
             else {
-                Pattern pattern = new Pattern(title, desc, materials, instructions, R.drawable.image3);
+                Pattern pattern = new Pattern(title, desc, materials, instructions, 0);
                 savePatternInBackground(pattern);
             }
         });
