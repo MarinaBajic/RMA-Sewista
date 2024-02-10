@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setToolbar(findViewById(R.id.toolbar));
-        setNavbar(findViewById(R.id.navbar));
+        setNavbar(findViewById(R.id.navbar), findViewById(R.id.floating_action_button));
         replaceFragment(new HomeFragment());
     }
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    private void setNavbar(BottomNavigationView navbar) {
+    private void setNavbar(BottomNavigationView navbar, FloatingActionButton floatingActionButton) {
         navbar.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.action_home) {
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+
+        floatingActionButton.setOnClickListener(view -> replaceFragment(new AddPatternFragment()));
     }
 
     private void replaceFragment(Fragment fragment) {

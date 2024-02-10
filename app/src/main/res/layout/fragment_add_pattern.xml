@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPatternFragment"
+    android:background="@color/lighter">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/add_pattern"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/add_new_pattern"
+            android:textColor="@color/darker"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/add_pattern_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:textColorHint="@color/black"
+            android:backgroundTint="@color/black"
+            android:inputType="text"
+            android:hint="@string/add_pattern_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_pattern"
+            android:autofillHints="Classic A-line Skirt" />
+
+        <EditText
+            android:id="@+id/add_pattern_desc"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:textColorHint="@color/black"
+            android:backgroundTint="@color/black"
+            android:inputType="text"
+            android:hint="@string/add_pattern_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_pattern_title"
+            android:autofillHints="Lorem ipsum dolor sit amet." />
+
+        <EditText
+            android:id="@+id/add_pattern_materials"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:textColorHint="@color/black"
+            android:backgroundTint="@color/black"
+            android:inputType="text"
+            android:hint="@string/add_pattern_materials"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_pattern_desc"
+            android:autofillHints="Scissors, cotton fabric" />
+
+        <EditText
+            android:id="@+id/add_pattern_instructions"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:textColorHint="@color/black"
+            android:backgroundTint="@color/black"
+            android:inputType="text"
+            android:hint="@string/add_pattern_instructions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_pattern_materials"
+            android:autofillHints="Cut the fabric. Sew the fabric." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

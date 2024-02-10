@@ -18,4 +18,11 @@
     <string name="pattern_materials">Materials:</string>
     <string name="app_slogan">Stitching Dreams into Reality: Your Ultimate Sewing Companion!</string>
     <string name="map_api_key">AIzaSyCCtY3pPg_Vj5DXSjc2_jJaV8SVj_nX_80</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new_pattern">Add new pattern</string>
+    <string name="add_pattern_title">Pattern Title</string>
+    <string name="add_pattern_description">Pattern Description</string>
+    <string name="add_pattern_materials">Materials</string>
+    <string name="add_pattern_instructions">Instructions</string>
 </resources>
