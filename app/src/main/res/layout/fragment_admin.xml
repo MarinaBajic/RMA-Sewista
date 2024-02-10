@@ -6,7 +6,7 @@
     android:name="com.sewista.AdminFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AdminFragment" >
+    tools:context=".fragments.AdminFragment" >
 
     <TextView
         android:id="@+id/admin_title"

@@ -1,4 +1,4 @@
-package com.sewista.fragment;
+package com.sewista.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;

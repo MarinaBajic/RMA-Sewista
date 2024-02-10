@@ -1,4 +1,4 @@
-package com.sewista.fragment;
+package com.sewista.fragments;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -38,13 +38,6 @@ public class MapsFragment extends Fragment {
         markerInPmf.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         googleMap.addMarker(markerInPmf);
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(pmf));
-
-//        LatLng current = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-//        MarkerOptions markerInCurrent = new MarkerOptions().position(current).title("Current location");
-//        markerInCurrent.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
-//        googleMap.addMarker(markerInCurrent);
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(current));
-
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.getUiSettings().setCompassEnabled(true);
     };
