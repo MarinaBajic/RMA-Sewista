@@ -19,7 +19,8 @@ public class PatternDetailsActivity extends AppCompatActivity {
     }
 
     private void setUpDetails() {
-        int patternPosition = getIntent().getIntExtra("PatternPosition", 1);
+        int patternPosition = getIntent().getIntExtra("PatternPosition", 0);
+        int[] images = getIntent().getIntArrayExtra("PatternImages");
         String patternDetailsTitle = getIntent().getStringExtra("PatternDetailsTitle");
         String patternDetailsDesc = getIntent().getStringExtra("PatternDetailsDesc");
         String patternDetailsMaterials = getIntent().getStringExtra("PatternDetailsMaterials");
@@ -36,7 +37,9 @@ public class PatternDetailsActivity extends AppCompatActivity {
         patternDetailsMaterialsView.setText(patternDetailsMaterials);
         patternDetailsInstructionsView.setText(patternDetailsInstructions);
 
-        int imageResource = R.drawable.image1 + patternPosition;
-        patternDetailsImageView.setImageResource(imageResource);
+        if (images != null && patternPosition < images.length)
+            patternDetailsImageView.setImageResource(images[patternPosition]);
+        else
+            patternDetailsImageView.setImageResource(R.drawable.image1);
     }
 }

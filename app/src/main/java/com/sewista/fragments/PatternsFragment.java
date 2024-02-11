@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
@@ -29,7 +29,7 @@ import java.util.concurrent.Executors;
 public class PatternsFragment extends Fragment implements RecyclerViewInterface {
 
     private List<Pattern> patternList;
-
+    private int[] images;
     private PatternDAO patternDAO;
 
     @Override
@@ -45,6 +45,15 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
         PatternDatabase patternDatabase = PatternDatabase.getInstance(requireContext());
         patternDAO = patternDatabase.getPatternDAO();
 
+        images = new int[] {
+                R.drawable.image1,
+                R.drawable.image2,
+                R.drawable.image3,
+                R.drawable.image4,
+                R.drawable.image5,
+                R.drawable.image6
+        };
+
         setListOfPatterns(view.findViewById(R.id.all_patterns));
     }
 
@@ -59,9 +68,10 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
             patternList = patternDAO.getAllPatterns();
 
             handler.post(() -> {
-                MyAdapter myAdapter = new MyAdapter(patternList, this);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                recyclerView.setLayoutManager(linearLayoutManager);
+                MyAdapter myAdapter = new MyAdapter(images, patternList, this);
+                int spanCount = getString(R.string.screen_type).equals("phone") ? 1 : 3;
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), spanCount);
+                recyclerView.setLayoutManager(gridLayoutManager);
                 recyclerView.setAdapter(myAdapter);
             });
         });
@@ -72,6 +82,7 @@ public class PatternsFragment extends Fragment implements RecyclerViewInterface 
         Intent intent = new Intent(getContext(), PatternDetailsActivity.class);
 
         intent.putExtra("PatternPosition", position);
+        intent.putExtra("PatternImages", images);
         intent.putExtra("PatternDetailsTitle", patternList.get(position).getTitle());
         intent.putExtra("PatternDetailsDesc", patternList.get(position).getDesc());
         intent.putExtra("PatternDetailsMaterials", patternList.get(position).getMaterials());

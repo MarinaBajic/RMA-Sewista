@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Sewista</string>
+    <string name="app_slogan">Stitching Dreams into Reality: Your Ultimate Sewing Companion!</string>
+
+    <string name="pattern_image_desc">Pattern image</string>
+    <string name="pattern_title">Pattern title</string>
+    <string name="pattern_desc">Lorem ipsum dolor sit amet.</string>
+
+    <string name="home_page_heading">Sewing patterns</string>
+    <string name="home_page_subheading">Sew Stylish: Unleash Your Creativity with Unique Patterns!</string>
+    <string name="logo">Sewista logo</string>
+
+    <string name="action_app_info">App Info</string>
+    <string name="action_home">Home</string>
+    <string name="action_patterns">Patterns</string>
+    <string name="action_location">Find us</string>
+    <string name="action_admin">Admin</string>
+
+    <string name="pattern_details_title">Pattern Details Title</string>
+    <string name="pattern_details">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="pattern_instructions">Instructions:</string>
+    <string name="pattern_materials">Materials:</string>
+
+    <string name="map_api_key">AIzaSyCCtY3pPg_Vj5DXSjc2_jJaV8SVj_nX_80</string>
+
+    <string name="add_new_pattern">Add new pattern</string>
+    <string name="add_pattern_title">Pattern Title</string>
+    <string name="add_pattern_description">Pattern Description</string>
+    <string name="add_pattern_materials">Materials</string>
+    <string name="add_pattern_instructions">Instructions</string>
+
+    <string name="save_pattern">Save pattern</string>
+
+    <string name="app_info_heading">Application information</string>
+    <string name="app_info_desc">This application was made as a project for my uni course - RMA</string>
+    <string name="app_info_by">Made with love by Marina Bajic</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="icon_delete">Delete icon</string>
+    <string name="icon_edit">Edit icon</string>
+    <string name="admin_panel">Admin panel</string>
+</resources>

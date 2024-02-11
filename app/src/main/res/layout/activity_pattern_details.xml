@@ -7,15 +7,11 @@
     android:background="@color/lighter"
     tools:context=".activity.PatternDetailsActivity">
 
-    <include
-        layout="@layout/layout_toolbar" />
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,8 +105,5 @@
                 app:srcCompat="@drawable/image2" />
         </LinearLayout>
     </ScrollView>
-
-    <include
-        layout="@layout/layout_navbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

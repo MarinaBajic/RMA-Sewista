@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
@@ -60,8 +60,9 @@ public class AdminFragment extends Fragment implements AdminAdapterListener {
 
             handler.post(() -> {
                 myAdminAdapter = new MyAdminAdapter(patternList, this);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                recyclerView.setLayoutManager(linearLayoutManager);
+                int spanCount = getString(R.string.screen_type).equals("phone") ? 1 : 3;
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), spanCount);
+                recyclerView.setLayoutManager(gridLayoutManager);
                 recyclerView.setAdapter(myAdminAdapter);
             });
         });

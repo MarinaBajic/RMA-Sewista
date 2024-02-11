@@ -38,10 +38,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     private final List<Pattern> patternList;
-
+    private final int[] images;
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public MyAdapter(List<Pattern> patternList, RecyclerViewInterface recyclerViewInterface) {
+    public MyAdapter(int[] images, List<Pattern> patternList, RecyclerViewInterface recyclerViewInterface) {
+        this.images = images;
         this.patternList = patternList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
@@ -57,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.patternTitle.setText(patternList.get(position).getTitle());
         holder.patternDesc.setText(patternList.get(position).getDesc());
-        holder.patternImage.setImageResource(R.drawable.image1 + position);
+        holder.patternImage.setImageResource(images[position]);
     }
 
     @Override
