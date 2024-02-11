@@ -53,4 +53,5 @@
     <string name="icon_delete">Delete icon</string>
     <string name="icon_edit">Edit icon</string>
     <string name="admin_panel">Admin panel</string>
+    <string name="decorative_background">Decorative background</string>
 </resources>

@@ -1,9 +1,19 @@
 package com.sewista.fragments;
 
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -72,7 +82,43 @@ public class AddPatternFragment extends Fragment {
         Handler handler = new Handler(Looper.getMainLooper());
         executorService.execute(() -> {
             patternDAO.addPattern(pattern);
-            handler.post(() -> Toast.makeText(requireContext(), "Added to Database", Toast.LENGTH_SHORT).show());
+            handler.post(() -> {
+                Toast.makeText(requireContext(), "Added to Database", Toast.LENGTH_SHORT).show();
+                makeNotification();
+            });
         });
+    }
+
+    private void makeNotification() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(requireContext(),
+                    Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(requireActivity(),
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
+            }
+        }
+
+        String channelId = "CHANNEL_ID_NOTIFICATION";
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext().getApplicationContext(), channelId);
+        builder.setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle("New pattern!")
+                .setContentText("You have successfully added a new pattern to the database")
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManager notificationManager = (NotificationManager) requireContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = notificationManager.getNotificationChannel(channelId);
+            if (notificationChannel == null) {
+                int importance = NotificationManager.IMPORTANCE_HIGH;
+                NotificationChannel notificationChannelNew = new NotificationChannel(channelId, "Description", importance);
+                notificationChannelNew.setLightColor(Color.DKGRAY);
+                notificationChannelNew.enableVibration(true);
+                notificationManager.createNotificationChannel(notificationChannelNew);
+            }
+        }
+        notificationManager.notify(0, builder.build());
     }
 }

@@ -50,8 +50,8 @@ public class MyAdminAdapter extends RecyclerView.Adapter<MyAdminAdapter.MyViewHo
         Pattern pattern = patternList.get(position);
 
         holder.patternTitle.setText(pattern.getTitle());
-        holder.editBtn.setOnClickListener(view -> adapterListener.onUpdate(pattern, position));
-        holder.deleteBtn.setOnClickListener(view -> adapterListener.onDelete(pattern, position));
+        holder.editBtn.setOnClickListener(view -> adapterListener.onUpdate(pattern, holder.getAbsoluteAdapterPosition()));
+        holder.deleteBtn.setOnClickListener(view -> adapterListener.onDelete(pattern, holder.getAbsoluteAdapterPosition()));
     }
 
     public void removePattern(int position) {
