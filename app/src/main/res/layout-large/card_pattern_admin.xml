@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/pattern_title_admin"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
                 android:layout_marginEnd="16dp"
                 android:padding="5dp"
                 android:text="@string/pattern_title"
-                android:textAlignment="textStart"
+                android:textAlignment="center"
                 android:textColor="@color/lightest"
                 android:textSize="20sp"
                 android:textStyle="bold"

@@ -29,7 +29,6 @@ public class AdminFragment extends Fragment implements AdminAdapterListener {
 
     private List<Pattern> patternList;
     private MyAdminAdapter myAdminAdapter;
-    private PatternDatabase patternDatabase;
     private PatternDAO patternDAO;
 
     @Override
@@ -42,7 +41,7 @@ public class AdminFragment extends Fragment implements AdminAdapterListener {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        patternDatabase = PatternDatabase.getInstance(requireContext());
+        PatternDatabase patternDatabase = PatternDatabase.getInstance(requireContext());
         patternDAO = patternDatabase.getPatternDAO();
 
         setListOfPatterns(view);
@@ -56,7 +55,7 @@ public class AdminFragment extends Fragment implements AdminAdapterListener {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
         executorService.execute(() -> {
-            patternList = patternDatabase.getPatternDAO().getAllPatterns();
+            patternList = patternDAO.getAllPatterns();
 
             handler.post(() -> {
                 myAdminAdapter = new MyAdminAdapter(patternList, this);
